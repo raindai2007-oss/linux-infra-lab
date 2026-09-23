@@ -81,7 +81,6 @@ There are several other common hardening steps that I did not take at this time 
 
 - `AllowUsers`, which would allow you to specify users who can SSH to the system. That would be a small extra layer of security. With only two accounts on this VM, this is less important at this stage.
 - `MaxAuthTries`: maximum number of authentication attempts per connection (this is useful as an additional layer of protection but it is less significant when password auth is already disabled).
-- Changing the default SSH port (22) can reduce noise from automated scanners, though a targeted attacker is not impeded, as the port is trivially discoverable by port scanning. Some consider this security-theatre while others see it as a minor noise reduction.
-- Another possible route would be automated banning via `fail2ban`. This would ban IPs after a number of failed login attempts. This is more useful if I expose this VM to the internet, but could be an option if I ever do that.
+- I also considered changing the default SSH port and using `fail2ban`. Please see `03-firewall-config.md` for the reasoning since they were really for firewall/network-layer rather than for SSH.
 
 I may get back into some of these later, especially if this lab gets connected with the AD lab, or is reachable from outside my home network.
